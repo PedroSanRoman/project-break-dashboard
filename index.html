@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Pedro San Roman</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+    <section id="Reloj_Digital">
+        <div class="glass-container">
+            <span id="time" class="time"></span>
+            <span id="date" class="date"></span>
+            <p id="message" class="message"></p>
+            <div>
+                <button id="Ampliar" class="Ampliar">Ampliar</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="Weather">
+        <div class="glass-container">
+            <div id="currentWeather" class="currentWeather"></div> 
+            <div id="forecastWeather" class="forecastWeather"></div>
+            <div>
+                <button id="Ampliar" class="Ampliar">Ampliar</button>
+            </div>  
+        </div>
+    </section>
+
+    <section id="Generador_Password">
+        <div class="glass-container">
+            <div class="Generador_Password">
+                <form class='formulario'>
+                    <label for="number">Introduce aquí el número de caracteres:</label>
+                    <input required id="number" type="number" name="numeroCaracteres" />
+                    <input id= "boton" type="button" value="Generar contraseña segura" />
+                </form>
+                <div>
+                    <h2 id="password"></h2>
+                </div>            
+            </div>
+            <div>
+                <button id="Ampliar" class="Ampliar">Ampliar</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="Gestor_Links">
+        <div class="glass-container">
+            <h1>Añade aquí tus enlaces favoritos:</h1>    
+            <input type="text" id="title"
+            placeholder="Título del enlace">
+            <input type="url" id="url"
+            placeholder="https://ejemplo.com">
+            <button id="addBtn">Añadir Link</button>
+        
+            <div id="linkList"></div>
+
+            <div>
+                <button id="Ampliar" class="Ampliar">Ampliar</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="./JS/script.js"></script>
+
+    <script src="./Generador_Password/script/script.js"></script> 
+    <script src="./Gestor_Links/JS/script.js"></script>
+    <script src="./Reloj_Digital/JS/script.js"></script>
+    <script src="./Weather/JS/script.js"></script>
+</body>
+</html>

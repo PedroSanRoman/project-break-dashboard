@@ -1,0 +1,237 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* end rese */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #121212;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: background-image 0.5s ease-in-out;
+    position: relative;
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.412); /* Oscurece el fondo */
+    z-index: -1; /* Asegura que el overlay esté debajo del contenido */
+}
+
+.glass-container {
+    backdrop-filter: blur(10px); /* Aplica el desenfoque al contenido */
+    background-color: rgba(255, 255, 255, 0.2); /* Capa translúcida */
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 720px;
+    height: 90%;
+    max-height: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;  
+    z-index: 1; /* Asegura que el contenido esté por encima del fondo */
+}
+
+.currentWeather, .forecastWeather {
+    background-color: #ffffffd2;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    width: 90%;
+    max-width: 600px;
+}
+
+.currentWeather h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.currentWeather p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+.currentData {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.currentData p {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+    -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+    0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    animation: glitch 500ms infinite;
+}
+
+.currentGrades {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.weatherIcon {
+    width: 64px;
+    height: 64px;
+    filter: grayscale(100%);
+}
+
+.currentGrades p {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.currentData ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.forecastWeather {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+}
+
+.forecastGrades {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    padding: 1rem;
+    min-width: 120px;
+    text-align: center;
+    flex: 0 0 auto;
+}
+
+.forecastGrades span {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.forecastGrades p {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+    -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+    0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    animation: glitch 500ms infinite;
+}
+
+
+li {
+    list-style: none;
+}
+
+/*Btn Back*/
+
+#volver {
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    text-align: center;
+    color: #121212;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer; 
+    transition: background-color 0.3s ease;
+}
+
+#volver:hover, #boton:hover {
+    background-color: #cdcdcd;
+}
+
+@keyframes glitch {
+0% {
+text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+  -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+  -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+}
+
+15% {
+text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+  0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+  -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+}
+
+50% {
+text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+  0.05em 0 0 rgba(0, 255, 0, 0.75), 
+  0 -0.05em 0 rgba(0, 0, 255, 0.75);
+}
+
+100% {
+text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75),
+  -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
+  -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+}
+}
